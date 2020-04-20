@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://jongho:leejong1829@boiler-plate-vgvne.mongodb.ne
 
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World! 안녕안녕'))
 
 
 
