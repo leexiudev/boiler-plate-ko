@@ -28,6 +28,7 @@ app.post('/register', (req, res) => {
 
     const user = new User(req.body)
 
+    //몽고DB에서 오는 메소드
     user.save((err, userInfo) => {
         if(err) return res.json({ success: false, err})
         return res.status(200).json({
