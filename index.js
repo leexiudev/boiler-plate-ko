@@ -3,6 +3,7 @@ const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
 const {User} = require("./models/User");
+const config = require('./config/key')
 
 // application/x-www-from-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jongho:leejong1829@boiler-plate-vgvne.mongodb.net/test?retryWrites=true&w=majority',{
+mongoose.connect(config.mongoURI,{
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() =>console.log('MongoDB connected...'))
     .catch(err => console.log(err))
@@ -19,7 +20,7 @@ mongoose.connect('mongodb+srv://jongho:leejong1829@boiler-plate-vgvne.mongodb.ne
 
 
 
-app.get('/', (req, res) => res.send('Hello World! 안녕안녕'))
+app.get('/', (req, res) => res.send('Hello World! 안녕안녕 클라이밍은 재밌어'))
 
 
 
